@@ -1,13 +1,13 @@
-import { DataTypes, Model } from 'sequelize'
+import { DataTypes, Model } from 'sequelize';
 
-import connectToDB from './db.js'
-import util from 'util'
+import connectToDB from './db.js';
+import util from 'util';
 
-export const db = await connectToDB('postgresql:///melon_db')
+export const db = await connectToDB('postgresql:///melon_db');
 
 export class User extends Model {
   [util.inspect.custom]() {
-    return this.toJSON()
+    return this.toJSON();
   }
 }
 
@@ -31,11 +31,11 @@ User.init(
     modelName: 'user',
     sequelize: db,
   }
-)
+);
 
 export class Product extends Model {
   [util.inspect.custom]() {
-    return this.toJSON()
+    return this.toJSON();
   }
 }
 
@@ -65,4 +65,4 @@ Product.init(
     modelName: 'product',
     sequelize: db,
   }
-)
+);
